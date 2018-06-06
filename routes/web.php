@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//comit
 Auth::routes();
 
 Route::get('/', 'BooksController@getMainPage')->name('main');
