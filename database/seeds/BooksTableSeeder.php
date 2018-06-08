@@ -17,13 +17,15 @@ class BooksTableSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
+        $books_pic = array('image1.jpg', 'image2.jpg', 'image3.jpg');
+
         // добавим 50 книг
         for ($i = 0; $i < 10; $i++) {
             Book::create([
                 'title' => $faker->sentence($nbWords = 4, $variableNbWords = true),
                 'description' => $faker->paragraph,
                 'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0.99, $max = 44.99),
-                'picrel' => $faker->word,
+                'picrel' => $books_pic[array_rand($books_pic, 1)],
                 'instock' => $faker->randomDigitNotNull,
                 'author' => $faker->name,
                 'type' => 'art',
@@ -36,7 +38,7 @@ class BooksTableSeeder extends Seeder
                 'title' => $faker->sentence($nbWords = 4, $variableNbWords = true),
                 'description' => $faker->paragraph,
                 'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0.99, $max = 44.99),
-                'picrel' => $faker->word,
+                'picrel' => $books_pic[array_rand($books_pic, 1)],
                 'instock' => $faker->randomDigitNotNull,
                 'author' => $faker->name,
                 'type' => 'art',
@@ -49,7 +51,7 @@ class BooksTableSeeder extends Seeder
                 'title' => $faker->sentence($nbWords = 4, $variableNbWords = true),
                 'description' => $faker->paragraph,
                 'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0.99, $max = 44.99),
-                'picrel' => $faker->word,
+                'picrel' => $books_pic[array_rand($books_pic, 1)],
                 'instock' => $faker->randomDigitNotNull,
                 'author' => $faker->name,
                 'type' => 'art',
@@ -62,7 +64,7 @@ class BooksTableSeeder extends Seeder
                 'title' => $faker->sentence($nbWords = 4, $variableNbWords = true),
                 'description' => $faker->paragraph,
                 'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0.99, $max = 44.99),
-                'picrel' => $faker->word,
+                'picrel' => $books_pic[array_rand($books_pic, 1)],
                 'instock' => $faker->randomDigitNotNull,
                 'author' => $faker->name,
                 'type' => 'art',
@@ -75,7 +77,7 @@ class BooksTableSeeder extends Seeder
                 'title' => $faker->sentence($nbWords = 4, $variableNbWords = true),
                 'description' => $faker->paragraph,
                 'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0.99, $max = 44.99),
-                'picrel' => $faker->word,
+                'picrel' => $books_pic[array_rand($books_pic, 1)],
                 'instock' => $faker->randomDigitNotNull,
                 'author' => $faker->name,
                 'type' => 'art',

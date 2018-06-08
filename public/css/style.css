@@ -97,6 +97,62 @@ footer p {
 	font-size: 1.1em;
 }
 
+.book_item {
+	font-family: Helvetica;
+	font-size: 1em;
+}
+
+.book_item h1 {
+	text-align: center;
+}
+
+.image_desc {
+	display: flex;
+}
+
+.image_desc img {
+	margin-right: 75px;
+}
+
+.image_desc span {
+	font-size: 1.4em;
+}
+
+.comment_item {
+	display: flex;
+	justify-content: space-between;
+
+	margin: 30px 0;
+
+	font-family: Helvetica;
+}
+
+.commentator {
+	width: 10%;
+
+	font-size: 1em;
+}
+
+.comment_item p {
+	margin: 0;
+	width: 80%;
+}
+
+.comment_time {
+	font-size: 0.8em;
+}
+
+.profile {
+	font-size: 1em;
+	font-family: Helvetica;
+}
+
+#caret {
+	font-size: 0.6em;
+	text-decoration: none;
+	color: #000;
+}
+
 #header_title {
 	font-family: Century Gothic;
 	font-size: 4em;
@@ -148,10 +204,54 @@ footer p {
 }
 
 /*lists of books*/
-#list_wrapper {
+#list_wrapper, .book_wrapper {
 	margin: 25px 15px;
 }
 
 #list_wrapper hr {
 	opacity: 0.3;
+}
+
+#outofstock {
+	color: #cc0000;
+}
+
+#instock {
+	color: #057a01;
+}
+
+#outofstock, #instock {
+	opacity: 0.7;
+}
+
+#nocomments {
+	opacity: 0.4;
+
+	text-align: center;
+}
+
+#back_to_art {
+	text-decoration: none;
+	color: #000;
+	opacity: 0.6;
+
+	font-size: 1.2em;
+	font-family: Helvetica;
+}
+
+#back_to_art:hover {
+	opacity: 1;
+}
+
+#edit_wrapper {
+	margin: 25px 15px;
+}
+
+#comment_form {
+	width: 100%;
+
+	border-radius: 15px;
+
+	font-family: Helvetica;
+	font-size: 1em;
 }

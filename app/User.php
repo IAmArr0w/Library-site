@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,31 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Проверка имеет ли пользователь определенную роль
+     * @param $check
+     * @return boolean
+     */
+    public function hasPermission($check)
+    {
+        return in_array($check, array_pluck($this->permissions->toArray(), 'name'));
+    }
+    /**
+     * Получает название права
+     * @param $name
+     * @return mixed
+     */
+    public function getPermissionDisplayName($name)
+    {
+        return DB::table('permissions')->where('name', $name)->first()->display_name;
+    }
+    /**
+     * Функция для получение прав.
+     * @return boolean
+     **/
+    public function permissions()
+    {
+        return $this->belongsToMany('App\Models\Permission', 'permission_user', 'user_id', 'permission_id');
+    }
 }

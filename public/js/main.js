@@ -10,5 +10,10 @@ function func(e){
 	}
 }
 
+function editConfirm(title) {
+	console.log(title);
+	alert(`You edited ${title}`);
+}
+
 var f = document.getElementById('header_title');
 f.addEventListener('mouseout', func);

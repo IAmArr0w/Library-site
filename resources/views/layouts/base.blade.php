@@ -20,9 +20,9 @@
 				<li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
             	<li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
             @else
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    You're logged in as {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{route('profile', Auth::user()->id)}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    You're logged in as {{ Auth::user()->name }}</a><br>
+                    @if(Auth::user()['role']=='admin')<a id="caret" href="{{route('admin')}}">You can turn to admin panel</a>@endif               
 
                 <div class="logout">
                     <a id="logout" href="{{ route('logout') }}"

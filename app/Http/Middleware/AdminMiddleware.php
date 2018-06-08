@@ -3,8 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
-class PermissionMiddleware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,7 +16,7 @@ class PermissionMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if($request['role']=='admin') {
+        if (Auth::user()['role']=='admin') {
             return $next($request);
         }
         else {
