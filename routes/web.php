@@ -10,17 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//comit
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Auth::routes();
 
-Route::get('/', 'BooksController@getMainPage')->name('main');
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('art', 'BooksController@getBooksListArt')->name('art');
+Route::get('/books', 'BooksController@getBooksList')->name('books');
 
-Route::get('scientific', 'BooksController@getMainPage')->name('scientific');
-
-Route::get('book/{id}', 'BooksController@getBooksItem')->name('item');
-
-Route::post('add_book', 'BooksController@addBook')->middleware('permission')->name('add_book');
-
-Route::post('add_comment', 'BooksController@addComment')->name('add_comment');
+Route::post('add_book', 'BooksController@addBook')->name('add_book');

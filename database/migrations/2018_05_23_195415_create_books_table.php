@@ -21,8 +21,6 @@ class CreateBooksTable extends Migration
             $table->boolean('instock')->nullable();
             $table->decimal('price', 10, 5)->nullable();
             $table->string('author', 120)->nullable();
-            $table->string('type', 15);
-            $table->string('kind', 30);
             $table->timestamps();
         });
     }
